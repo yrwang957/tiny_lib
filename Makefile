@@ -4,8 +4,10 @@ CFLAGS = -std=gnu11 -Wall -DINFO
 INC =
 LIB =
 
-main: main.o sort.o stack.o
-	${CC} main.o sort.o stack.o ${CFLAGS} ${INC} ${LIB} -o tiny
+all: main
+
+main: main.o sort.o stack.o linked_list.o
+	${CC} main.o sort.o stack.o linked_list.o ${CFLAGS} ${INC} ${LIB} -o tiny
 
 main.o: main.c
 	${CC} main.c ${CFLAGS} ${INC} ${LIB} -c
@@ -15,6 +17,9 @@ sort.o: sort.c
 
 stack.o: stack.c
 	${CC} stack.c ${CFLAGS} ${INC} ${LIB} -c
+
+linked_list.o: linked_list.c
+	${CC} linked_list.c ${CFLAGS} ${INC} ${LIB} -c
 
 clean:
 	@rm -rf *.o tiny
