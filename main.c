@@ -7,10 +7,12 @@
 #include "sort.h"
 #include "stack.h"
 #include "linked_list.h"
+#include "sleep.h"
 
 int run_sort();
 int run_stack();
 int run_linked_list();
+int run_tiny_sleep();
 
 int main(int argc, char** argv)
 {
@@ -24,6 +26,7 @@ int main(int argc, char** argv)
     run_sort();
     run_stack();
     run_linked_list();
+    run_tiny_sleep();
 
     return 0;
 }
@@ -177,5 +180,22 @@ int run_linked_list()
     printf("Delete all | ");
     dump_nodes();
 
+    printf("\n");
+    return 0;
+}
+
+int run_tiny_sleep()
+{
+    printf("+-------------------+\n");
+    printf("| Sleep 1.1 seconds |\n");
+    printf("+-------------------+\n");
+
+    double sleep_time = 1.1;
+
+    printf("Sleep %lf seconds, start...", sleep_time);
+    tiny_sleep(sleep_time);
+    printf("Finished\n");
+
+    printf("\n");
     return 0;
 }

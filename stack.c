@@ -6,7 +6,6 @@
 int stack[SIZE] = {};
 int pointer = -1;
 
-
 int push(int x)
 {
     if(pointer + 1 >= SIZE)
