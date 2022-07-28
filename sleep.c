@@ -6,6 +6,7 @@ int tiny_sleep(double seconds)
 {
     unsigned int integer = (unsigned int)seconds;
     double decimal = seconds - integer;
+
     struct timeval sleep_time;
     sleep_time.tv_sec = integer;
     sleep_time.tv_usec = decimal * 1000000;
